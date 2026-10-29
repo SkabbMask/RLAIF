@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://pyxn2vkv7ca6"]
+
+[resource]
+default_font_size = 60
+FoldableContainer/font_sizes/font_size = 40
+Label/font_sizes/font_size = 30
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 80

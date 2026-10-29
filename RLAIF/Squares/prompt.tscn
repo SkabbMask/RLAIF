@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dg1djytdj6r5p"]
+
+[ext_resource type="Script" uid="uid://dlp1n7ibfdpc3" path="res://Squares/prompt.gd" id="1_do6es"]
+
+[node name="Prompt" type="Node2D" unique_id=282110821]
+script = ExtResource("1_do6es")

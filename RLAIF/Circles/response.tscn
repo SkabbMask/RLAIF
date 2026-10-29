@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qbanf2pja78k"]
+
+[ext_resource type="Script" uid="uid://bbl6sbomlewsa" path="res://Circles/response.gd" id="1_dmkj4"]
+[ext_resource type="PackedScene" uid="uid://drn6xcl1it63d" path="res://attribute_panel.tscn" id="2_7wmsk"]
+
+[node name="Response" type="Node2D" unique_id=1289970976 node_paths=PackedStringArray("attributePanel")]
+script = ExtResource("1_dmkj4")
+attributePanel = NodePath("AttributePanel")
+
+[node name="AttributePanel" parent="." unique_id=804382085 instance=ExtResource("2_7wmsk")]
+visible = false

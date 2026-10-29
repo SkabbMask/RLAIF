@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://drn6xcl1it63d"]
+
+[ext_resource type="Script" uid="uid://78ehpvy56xhu" path="res://attribute_panel.gd" id="1_nd7hs"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=804382085 node_paths=PackedStringArray("radiusSlider", "hueSlider", "opacitySlider")]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nd7hs")
+radiusSlider = NodePath("HBoxContainer/Radius/VSlider")
+hueSlider = NodePath("HBoxContainer/Hue/VSlider")
+opacitySlider = NodePath("HBoxContainer/Opacity/VSlider")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=985830445]
+layout_mode = 2
+
+[node name="Radius" type="VBoxContainer" parent="HBoxContainer" unique_id=2061936280]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Radius" unique_id=408876680]
+layout_mode = 2
+text = "Radius"
+
+[node name="VSlider" type="VSlider" parent="HBoxContainer/Radius" unique_id=996571106]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+min_value = 15.0
+max_value = 60.0
+step = 0.1
+value = 15.0
+
+[node name="Hue" type="VBoxContainer" parent="HBoxContainer" unique_id=1103108635]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Hue" unique_id=1163747125]
+layout_mode = 2
+text = "Hue"
+
+[node name="VSlider" type="VSlider" parent="HBoxContainer/Hue" unique_id=1166337022]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+
+[node name="Opacity" type="VBoxContainer" parent="HBoxContainer" unique_id=1251435326]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Opacity" unique_id=295622056]
+layout_mode = 2
+text = "Opacity"
+
+[node name="VSlider" type="VSlider" parent="HBoxContainer/Opacity" unique_id=26387843]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01

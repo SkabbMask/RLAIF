@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ceqkv37801ulv"]
+
+[ext_resource type="Theme" uid="uid://pyxn2vkv7ca6" path="res://menu_theme.tres" id="1_nc5it"]
+[ext_resource type="Script" uid="uid://ciaaaqkw21nbg" path="res://train_new_model_menu.gd" id="2_64pvd"]
+[ext_resource type="PackedScene" uid="uid://qbanf2pja78k" path="res://Circles/response.tscn" id="3_dp4eo"]
+[ext_resource type="Script" uid="uid://4x2st6bkajus" path="res://Circles/generating.gd" id="4_7h15u"]
+
+[node name="Control" type="Control" unique_id=1710552546 node_paths=PackedStringArray("device_name_label", "set_size_input", "response_template", "generating")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_nc5it")
+script = ExtResource("2_64pvd")
+device_name_label = NodePath("VBoxContainer/Data/VBoxContainer/Label")
+set_size_input = NodePath("VBoxContainer/SetSize/SpinBox")
+response_template = NodePath("Response")
+generating = NodePath("Generating")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1405779953]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 1040.0
+
+[node name="Train" type="Label" parent="VBoxContainer" unique_id=640003599]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Train"
+horizontal_alignment = 1
+
+[node name="Data" type="FoldableContainer" parent="VBoxContainer" unique_id=1786931075]
+layout_mode = 2
+title = "Data"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Data" unique_id=295423107]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Data/VBoxContainer" unique_id=1622225024]
+layout_mode = 2
+text = "Device: "
+
+[node name="SetSize" type="HBoxContainer" parent="VBoxContainer" unique_id=1575633939]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SetSize" unique_id=1841341812]
+layout_mode = 2
+text = "Set size: "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/SetSize" unique_id=379137785]
+layout_mode = 2
+min_value = 10.0
+value = 10.0
+rounded = true
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=54379579]
+layout_mode = 2
+text = "Start training"
+
+[node name="Response" parent="." unique_id=1289970976 instance=ExtResource("3_dp4eo")]
+position = Vector2(400, 0)
+
+[node name="Generating" type="Node" parent="." unique_id=135446958]
+script = ExtResource("4_7h15u")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
